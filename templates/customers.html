@@ -1,0 +1,37 @@
+<h2>Customer List</h2>
+
+<a href="/">Add Customer</a>
+
+<br><br>
+
+<table border="1">
+
+<tr>
+<th>Bill Number</th>
+<th>Name</th>
+<th>Phone</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+
+{% for row in rows %}
+
+<tr>
+
+<td>{{row['billno']}}</td>
+<td>{{row['name']}}</td>
+<td>{{row['phone']}}</td>
+
+<td>
+<a href="/edit/{{row['billno']}}">Edit</a>
+</td>
+
+<td>
+<a href="/delete/{{row['billno']}}">Delete</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>

@@ -1,0 +1,58 @@
+<h2>Edit Measurements</h2>
+
+<form action="/update/{{customer[0]}}" method="post">
+
+<h3>Shirt Measurements</h3>
+
+Length:<br>
+<input name="shirt_length" value="{{customer[3]}}"><br>
+
+Shoulder:<br>
+<input name="shoulder" value="{{customer[4]}}"><br>
+
+Sleeve:<br>
+<input name="sleeve" value="{{customer[5]}}"><br>
+
+Chest:<br>
+<input name="chest" value="{{customer[6]}}"><br>
+
+Stomach:<br>
+<input name="stomach" value="{{customer[7]}}"><br>
+
+Hip:<br>
+<input name="shirt_hip" value="{{customer[8]}}"><br>
+
+Collar:<br>
+<input name="collar" value="{{customer[9]}}"><br><br>
+
+
+<h3>Pant Measurements</h3>
+
+Length:<br>
+<input name="pant_length" value="{{customer[10]}}"><br>
+
+Waist:<br>
+<input name="waist" value="{{customer[11]}}"><br>
+
+Hip:<br>
+<input name="pant_hip" value="{{customer[12]}}"><br>
+
+Thigh:<br>
+<input name="thigh" value="{{customer[13]}}"><br>
+
+Knee:<br>
+<input name="knee" value="{{customer[14]}}"><br>
+
+Bottom:<br>
+<input name="bottom" value="{{customer[15]}}"><br>
+
+Fork:<br>
+<input name="fork" value="{{customer[16]}}"><br><br>
+
+<button type="submit">Update</button>
+
+</form>
+
+<br><br>
+
+<a href="/customers">Back to Customer List</a>

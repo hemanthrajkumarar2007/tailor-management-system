@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Search Customer</title>
+</head>
+
+<body>
+
+<a href="/">⬅ Back to Home</a>
+
+<h2>Search Customer</h2>
+
+<form method="post">
+
+Bill Number:<br>
+<input type="text" name="billno"><br><br>
+
+OR<br><br>
+
+Phone Number:<br>
+<input type="text" name="phone"><br><br>
+
+<button type="submit">Search</button>
+
+</form>
+
+<hr>
+
+{% if rows %}
+
+{% for row in rows %}
+
+<h3>Customer Details</h3>
+
+<b>Bill Number:</b> {{row['billno']}} <br>
+<b>Name:</b> {{row['name']}} <br>
+<b>Phone:</b> {{row['phone']}} <br>
+
+<h4>Shirt Measurements</h4>
+
+Length : {{row['shirt_length']}} <br>
+Shoulder : {{row['shoulder']}} <br>
+Sleeve : {{row['sleeve']}} <br>
+Chest : {{row['chest']}} <br>
+Stomach : {{row['stomach']}} <br>
+Hip : {{row['shirt_hip']}} <br>
+Collar : {{row['collar']}} <br>
+
+<h4>Pant Measurements</h4>
+
+Length : {{row['pant_length']}} <br>
+Waist : {{row['waist']}} <br>
+Hip : {{row['pant_hip']}} <br>
+Thigh : {{row['thigh']}} <br>
+Knee : {{row['knee']}} <br>
+Bottom : {{row['bottom']}} <br>
+Fork : {{row['fork']}} <br>
+
+<hr>
+
+{% endfor %}
+
+{% else %}
+
+<p>No customer found.</p>
+
+{% endif %}
+
+</body>
+</html>
