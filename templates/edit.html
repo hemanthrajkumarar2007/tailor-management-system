@@ -1,58 +1,99 @@
-<h2>Edit Measurements</h2>
+<!DOCTYPE html>
 
-<form action="/update/{{customer[0]}}" method="post">
+<html>
 
-<h3>Shirt Measurements</h3>
+<head>
+    <title>Edit Measurements</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
-Length:<br>
-<input name="shirt_length" value="{{customer[3]}}"><br>
+<body>
 
-Shoulder:<br>
-<input name="shoulder" value="{{customer[4]}}"><br>
+```
+<div class="header">
+    <h1>✏️ Edit Customer Measurements</h1>
+    <p>Update Customer Measurement Details</p>
+</div>
 
-Sleeve:<br>
-<input name="sleeve" value="{{customer[5]}}"><br>
+<div class="main-container">
 
-Chest:<br>
-<input name="chest" value="{{customer[6]}}"><br>
+    <div class="navigation">
 
-Stomach:<br>
-<input name="stomach" value="{{customer[7]}}"><br>
+        <a href="/" class="nav-btn customer-btn">
+            ➕ Add Customer
+        </a>
 
-Hip:<br>
-<input name="shirt_hip" value="{{customer[8]}}"><br>
+        <a href="/customers" class="nav-btn search-btn">
+            📋 Customer List
+        </a>
 
-Collar:<br>
-<input name="collar" value="{{customer[9]}}"><br><br>
+    </div>
 
+    <form action="/update/{{customer[0]}}" method="post">
 
-<h3>Pant Measurements</h3>
+        <div class="measurement-card">
 
-Length:<br>
-<input name="pant_length" value="{{customer[10]}}"><br>
+            <h3>👔 Shirt Measurements</h3>
 
-Waist:<br>
-<input name="waist" value="{{customer[11]}}"><br>
+            <label>Length</label>
+            <input name="shirt_length" value="{{customer[3]}}">
 
-Hip:<br>
-<input name="pant_hip" value="{{customer[12]}}"><br>
+            <label>Shoulder</label>
+            <input name="shoulder" value="{{customer[4]}}">
 
-Thigh:<br>
-<input name="thigh" value="{{customer[13]}}"><br>
+            <label>Sleeve</label>
+            <input name="sleeve" value="{{customer[5]}}">
 
-Knee:<br>
-<input name="knee" value="{{customer[14]}}"><br>
+            <label>Chest</label>
+            <input name="chest" value="{{customer[6]}}">
 
-Bottom:<br>
-<input name="bottom" value="{{customer[15]}}"><br>
+            <label>Stomach</label>
+            <input name="stomach" value="{{customer[7]}}">
 
-Fork:<br>
-<input name="fork" value="{{customer[16]}}"><br><br>
+            <label>Hip</label>
+            <input name="shirt_hip" value="{{customer[8]}}">
 
-<button type="submit">Update</button>
+            <label>Collar</label>
+            <input name="collar" value="{{customer[9]}}">
 
-</form>
+        </div>
 
-<br><br>
+        <div class="measurement-card">
 
-<a href="/customers">Back to Customer List</a>
+            <h3>👖 Pant Measurements</h3>
+
+            <label>Length</label>
+            <input name="pant_length" value="{{customer[10]}}">
+
+            <label>Waist</label>
+            <input name="waist" value="{{customer[11]}}">
+
+            <label>Hip</label>
+            <input name="pant_hip" value="{{customer[12]}}">
+
+            <label>Thigh</label>
+            <input name="thigh" value="{{customer[13]}}">
+
+            <label>Knee</label>
+            <input name="knee" value="{{customer[14]}}">
+
+            <label>Bottom</label>
+            <input name="bottom" value="{{customer[15]}}">
+
+            <label>Fork</label>
+            <input name="fork" value="{{customer[16]}}">
+
+        </div>
+
+        <button type="submit" class="save-btn">
+            💾 Update Measurements
+        </button>
+
+    </form>
+
+</div>
+```
+
+</body>
+
+</html>

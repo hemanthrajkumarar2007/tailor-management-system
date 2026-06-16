@@ -1,68 +1,114 @@
-<h2>Add Customer</h2>
+<!DOCTYPE html>
+<html>
 
-<form action="/add" method="post">
+<head>
+    <title>Tailor Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
-Name:<br>
-<input name="name"><br><br>
+<body>
 
-Phone:<br>
-<input name="phone"><br><br>
+    <div class="header">
+        <h1>✂️ Tailor Management System</h1>
+        <p>Customer Measurement & Order Management</p>
+    </div>
 
-<h3>Shirt Measurements</h3>
+    <div class="navigation">
 
-Length:<br>
-<input name="shirt_length"><br>
+        <a href="/search" class="nav-btn search-btn">
+            🔍 Search Customer
+        </a>
 
-Shoulder:<br>
-<input name="shoulder"><br>
+        <a href="/customers" class="nav-btn customer-btn">
+            📋 Customer List
+        </a>
 
-Sleeve:<br>
-<input name="sleeve"><br>
+    </div>
 
-Chest:<br>
-<input name="chest"><br>
+    <div class="main-container">
 
-Stomach:<br>
-<input name="stomach"><br>
+        <h2>Add New Customer</h2>
 
-Hip:<br>
-<input name="shirt_hip"><br>
+        <form action="/add" method="post">
 
-Collar:<br>
-<input name="collar"><br><br>
+            <div class="customer-card">
 
-<h3>Pant Measurements</h3>
+                <h3>👤 Customer Information</h3>
 
-Length:<br>
-<input name="pant_length"><br>
+                <label>Name</label>
+                <input type="text" name="name" required>
 
-Waist:<br>
-<input name="waist"><br>
+                <label>Phone Number</label>
+                <input type="text" name="phone" required>
 
-Hip:<br>
-<input name="pant_hip"><br>
+            </div>
 
-Thigh:<br>
-<input name="thigh"><br>
+            <div class="measurement-container">
 
-Knee:<br>
-<input name="knee"><br>
+                <div class="measurement-card">
 
-Bottom:<br>
-<input name="bottom"><br>
+                    <h3>👔 Shirt Measurements</h3>
 
-Fork:<br>
-<input name="fork"><br><br>
+                    <label>Length</label>
+                    <input name="shirt_length">
 
-<button type="submit">Save</button>
+                    <label>Shoulder</label>
+                    <input name="shoulder">
 
-</form>
+                    <label>Sleeve</label>
+                    <input name="sleeve">
 
-<br><br>
+                    <label>Chest</label>
+                    <input name="chest">
 
-<a href="/search">Search Customer</a>
+                    <label>Stomach</label>
+                    <input name="stomach">
 
-<br><br>
+                    <label>Hip</label>
+                    <input name="shirt_hip">
 
-<a href="/customers">Customer List</a>
+                    <label>Collar</label>
+                    <input name="collar">
 
+                </div>
+
+                <div class="measurement-card">
+
+                    <h3>👖 Pant Measurements</h3>
+
+                    <label>Length</label>
+                    <input name="pant_length">
+
+                    <label>Waist</label>
+                    <input name="waist">
+
+                    <label>Hip</label>
+                    <input name="pant_hip">
+
+                    <label>Thigh</label>
+                    <input name="thigh">
+
+                    <label>Knee</label>
+                    <input name="knee">
+
+                    <label>Bottom</label>
+                    <input name="bottom">
+
+                    <label>Fork</label>
+                    <input name="fork">
+
+                </div>
+
+            </div>
+
+            <button type="submit" class="save-btn">
+                💾 Save Customer
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

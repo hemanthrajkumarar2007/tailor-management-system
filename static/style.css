@@ -1,0 +1,158 @@
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f4f8ff;
+    margin:0;
+    padding:0;
+}
+
+.header{
+    background:linear-gradient(135deg,#1565c0,#42a5f5);
+    color:white;
+    text-align:center;
+    padding:30px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.header h1{
+    margin:0;
+}
+
+.header p{
+    margin-top:8px;
+}
+
+.main-container{
+    max-width:800px;
+    margin:30px auto;
+    padding:20px;
+}
+
+.navigation{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.nav-btn{
+    text-decoration:none;
+    color:white;
+    padding:14px 25px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.search-btn{
+    background:#4caf50;
+}
+
+.customer-btn{
+    background:#ff9800;
+}
+
+.nav-btn:hover{
+    transform:translateY(-3px);
+}
+
+.customer-card,
+.measurement-card{
+    background:white;
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.measurement-card h3,
+.customer-card h3{
+    color:#1565c0;
+    margin-top:0;
+}
+
+label{
+    display:block;
+    margin-top:12px;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border:1px solid #dcdcdc;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+input:focus{
+    outline:none;
+    border-color:#1565c0;
+}
+
+.save-btn{
+    width:100%;
+    background:#1565c0;
+    color:white;
+    border:none;
+    padding:15px;
+    font-size:17px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.save-btn:hover{
+    background:#0d47a1;
+}
+.table-card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.customer-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.customer-table th{
+    background:#1565c0;
+    color:white;
+    padding:15px;
+}
+
+.customer-table td{
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+.customer-table tr:hover{
+    background:#f5f9ff;
+}
+
+.edit-btn{
+    background:#4caf50;
+    color:white;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:8px;
+}
+
+.delete-btn{
+    background:#f44336;
+    color:white;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:8px;
+}
+p{
+    line-height:1.8;
+}
+
+.customer-card p,
+.measurement-card p{
+    margin:8px 0;
+}

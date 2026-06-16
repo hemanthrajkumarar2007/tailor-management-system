@@ -1,70 +1,102 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Search Customer</title>
+    <title>Search Customer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<a href="/">⬅ Back to Home</a>
+    <div class="header">
+        <h1>🔍 Search Customer</h1>
+        <p>Find Customer Details & Measurements</p>
+    </div>
 
-<h2>Search Customer</h2>
+    <div class="main-container">
 
-<form method="post">
+        <div class="navigation">
 
-Bill Number:<br>
-<input type="text" name="billno"><br><br>
+            <a href="/" class="nav-btn customer-btn">
+                ➕ Add Customer
+            </a>
 
-OR<br><br>
+            <a href="/customers" class="nav-btn search-btn">
+                📋 Customer List
+            </a>
 
-Phone Number:<br>
-<input type="text" name="phone"><br><br>
+        </div>
 
-<button type="submit">Search</button>
+        <div class="customer-card">
 
-</form>
+            <h3>Search Customer</h3>
 
-<hr>
+            <form method="post">
 
-{% if rows %}
+                <label>Bill Number</label>
+                <input type="text" name="billno">
 
-{% for row in rows %}
+                <p style="text-align:center;"><b>OR</b></p>
 
-<h3>Customer Details</h3>
+                <label>Phone Number</label>
+                <input type="text" name="phone">
 
-<b>Bill Number:</b> {{row['billno']}} <br>
-<b>Name:</b> {{row['name']}} <br>
-<b>Phone:</b> {{row['phone']}} <br>
+                <button type="submit" class="save-btn">
+                    🔍 Search
+                </button>
 
-<h4>Shirt Measurements</h4>
+            </form>
 
-Length : {{row['shirt_length']}} <br>
-Shoulder : {{row['shoulder']}} <br>
-Sleeve : {{row['sleeve']}} <br>
-Chest : {{row['chest']}} <br>
-Stomach : {{row['stomach']}} <br>
-Hip : {{row['shirt_hip']}} <br>
-Collar : {{row['collar']}} <br>
+        </div>
 
-<h4>Pant Measurements</h4>
+        {% if rows %}
 
-Length : {{row['pant_length']}} <br>
-Waist : {{row['waist']}} <br>
-Hip : {{row['pant_hip']}} <br>
-Thigh : {{row['thigh']}} <br>
-Knee : {{row['knee']}} <br>
-Bottom : {{row['bottom']}} <br>
-Fork : {{row['fork']}} <br>
+        {% for row in rows %}
 
-<hr>
+        <div class="customer-card">
 
-{% endfor %}
+            <h3>👤 Customer Details</h3>
 
-{% else %}
+            <p><b>Bill Number:</b> {{row['billno']}}</p>
+            <p><b>Name:</b> {{row['name']}}</p>
+            <p><b>Phone:</b> {{row['phone']}}</p>
 
-<p>No customer found.</p>
+        </div>
 
-{% endif %}
+        <div class="measurement-card">
+
+            <h3>👔 Shirt Measurements</h3>
+
+            <p><b>Length:</b> {{row['shirt_length']}}</p>
+            <p><b>Shoulder:</b> {{row['shoulder']}}</p>
+            <p><b>Sleeve:</b> {{row['sleeve']}}</p>
+            <p><b>Chest:</b> {{row['chest']}}</p>
+            <p><b>Stomach:</b> {{row['stomach']}}</p>
+            <p><b>Hip:</b> {{row['shirt_hip']}}</p>
+            <p><b>Collar:</b> {{row['collar']}}</p>
+
+        </div>
+
+        <div class="measurement-card">
+
+            <h3>👖 Pant Measurements</h3>
+
+            <p><b>Length:</b> {{row['pant_length']}}</p>
+            <p><b>Waist:</b> {{row['waist']}}</p>
+            <p><b>Hip:</b> {{row['pant_hip']}}</p>
+            <p><b>Thigh:</b> {{row['thigh']}}</p>
+            <p><b>Knee:</b> {{row['knee']}}</p>
+            <p><b>Bottom:</b> {{row['bottom']}}</p>
+            <p><b>Fork:</b> {{row['fork']}}</p>
+
+        </div>
+
+        {% endfor %}
+
+        {% endif %}
+
+    </div>
 
 </body>
+
 </html>

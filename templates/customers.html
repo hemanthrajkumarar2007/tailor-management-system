@@ -1,37 +1,75 @@
-<h2>Customer List</h2>
+<!DOCTYPE html>
+<html>
 
-<a href="/">Add Customer</a>
+<head>
+    <title>Customer List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
-<br><br>
+<body>
 
-<table border="1">
+    <div class="header">
+        <h1>📋 Customer Records</h1>
+        <p>Manage All Tailor Shop Customers</p>
+    </div>
 
-<tr>
-<th>Bill Number</th>
-<th>Name</th>
-<th>Phone</th>
-<th>Edit</th>
-<th>Delete</th>
-</tr>
+    <div class="main-container">
 
-{% for row in rows %}
+        <div class="navigation">
 
-<tr>
+            <a href="/" class="nav-btn customer-btn">
+                ➕ Add Customer
+            </a>
 
-<td>{{row['billno']}}</td>
-<td>{{row['name']}}</td>
-<td>{{row['phone']}}</td>
+            <a href="/search" class="nav-btn search-btn">
+                🔍 Search Customer
+            </a>
 
-<td>
-<a href="/edit/{{row['billno']}}">Edit</a>
-</td>
+        </div>
 
-<td>
-<a href="/delete/{{row['billno']}}">Delete</a>
-</td>
+        <div class="table-card">
 
-</tr>
+            <table class="customer-table">
 
-{% endfor %}
+                <tr>
+                    <th>Bill No</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
 
-</table>
+                {% for row in rows %}
+
+                <tr>
+
+                    <td>{{row['billno']}}</td>
+                    <td>{{row['name']}}</td>
+                    <td>{{row['phone']}}</td>
+
+                    <td>
+                        <a href="/edit/{{row['billno']}}" class="edit-btn">
+                            ✏️ Edit
+                        </a>
+                    </td>
+
+                    <td>
+                        <a href="/delete/{{row['billno']}}" class="delete-btn"
+                           onclick="return confirm('Delete this customer?')">
+                            🗑 Delete
+                        </a>
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
